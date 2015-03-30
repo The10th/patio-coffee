@@ -1,11 +1,12 @@
 @import 'color';
+@import 'mixins';
 
 //html attribute styling
 *{
 	font-family: 'Avenir Next';
 }
 body{
-	background-color: @patio-cream;
+	.gradient;
 }
 
 // Tapering horizontal rule
@@ -18,15 +19,15 @@ hr {
     background-image:     -ms-linear-gradient(left, @patio-olive, @patio-rust, @patio-olive);
     background-image:      -o-linear-gradient(left, @patio-olive, @patio-rust, @patio-olive);
     &:after{
+    	.transparent;
     	color:@patio-rust;
 	content:'\00A7';
 	display: inline-block;
 	position: relative;
-	top: -0.7em;
+	top: -0.6em;
 	left:50%;
 	font-size: 1.5em;
 	padding: 0 0.25em;
-	background: transparent;
     }
 }
 
@@ -38,9 +39,10 @@ nav{
 	padding:1%;
 	background-color: @patio-rust;
 	.address{
-		li{
+		li{	
 			//makes the first line of the address a bit bigger
 			&:first-child{
+				line-height: 40px;
 				font-size: 24px;
 			}
 		}
@@ -49,7 +51,7 @@ nav{
 
 		li{
 			float:none;
-			line-height: 25px;
+			line-height: 30px;
 			.social{
 				li{
 					&:first-child{
@@ -70,7 +72,6 @@ nav{
 
 //============ End Nav Styling ============//
 
-
 //============ Begin Carousel Effects ============//
 
 //carousel effect with indicator dots
@@ -90,10 +91,17 @@ nav{
 
 //============ End Carousel Effects ============//
 
+//adding min height so footer visually stays near the bottom of the page
+.container{
+	min-height: 500px;
+}
+
+
 //============ Begin Pagination ==============//
 .tabs{
+	.transparent;
 	li.tab{
-		background: @patio-cream;
+		.transparent;
 		a{
 			color:@patio-rust;
 			&:hover{
@@ -109,7 +117,6 @@ nav{
 	margin-top: 3%;
 }
 
-
 footer{
 	vertical-align: bottom;
 	padding:2%;
@@ -117,7 +124,6 @@ footer{
 	border-bottom: 2px solid @patio-rust;
 	margin-top:2%;
 	margin-bottom: 2%;
-
 }
 
 
