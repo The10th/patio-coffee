@@ -1,8 +1,17 @@
+.transparent {
+  background: transparent;
+  background-color: transparent;
+}
 * {
   font-family: 'Avenir Next';
 }
 body {
-  background-color: #dadada;
+  background-color: #dfdfdf;
+  background: -webkit-gradient(linear, left top, left bottom, from(#dfdfdf), to(#9a9a9a));
+  background: -webkit-linear-gradient(top, #dfdfdf, #9a9a9a);
+  background: -moz-linear-gradient(top, #dfdfdf, #9a9a9a);
+  background: -ms-linear-gradient(top, #dfdfdf, #9a9a9a);
+  background: -o-linear-gradient(top, #dfdfdf, #9a9a9a);
 }
 hr {
   border: 0;
@@ -14,15 +23,16 @@ hr {
   background-image: -o-linear-gradient(left, #a19d5e, #ac6e45, #a19d5e);
 }
 hr:after {
+  background: transparent;
+  background-color: transparent;
   color: #ac6e45;
   content: '\00A7';
   display: inline-block;
   position: relative;
-  top: -0.7em;
+  top: -0.6em;
   left: 50%;
   font-size: 1.5em;
   padding: 0 0.25em;
-  background: transparent;
 }
 nav {
   height: 100%;
@@ -30,11 +40,12 @@ nav {
   background-color: #ac6e45;
 }
 nav .address li:first-child {
+  line-height: 40px;
   font-size: 24px;
 }
 nav ul li {
   float: none;
-  line-height: 25px;
+  line-height: 30px;
 }
 nav ul li .social li:first-child {
   margin-right: 5%;
@@ -55,8 +66,16 @@ nav ul li .social li:last-child {
 .slider ul.indicators li.indicator-item.active {
   background-color: #4c5975;
 }
+.container {
+  min-height: 500px;
+}
+.tabs {
+  background: transparent;
+  background-color: transparent;
+}
 .tabs li.tab {
-  background: #dadada;
+  background: transparent;
+  background-color: transparent;
 }
 .tabs li.tab a {
   color: #ac6e45;
