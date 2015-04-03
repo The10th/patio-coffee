@@ -1,4 +1,6 @@
-.gradient (@startColor: lighten(@patio-cream,2%), @endColor: darken(@patio-cream, 25%)) {
+@import 'color.less';
+
+.gradient-rust (@startColor: lighten(@patio-rust,2%), @endColor: darken(@patio-rust, 15%)) {
 	background-color: @startColor;
 	background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
 	background: -webkit-linear-gradient(top, @startColor, @endColor);
@@ -9,4 +11,14 @@
 .transparent{
 	background:transparent;
 	background-color:transparent;
+}
+
+//tapering horizontal line
+.taper{
+	border: 0;
+	height: 1px;
+	background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), @patio-rust, rgba(0,0,0,0));
+	background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), @patio-rust, rgba(0,0,0,0));
+	background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), @patio-rust, rgba(0,0,0,0));
+	background-image:      -o-linear-gradient(left, rgba(0,0,0,0), @patio-rust, rgba(0,0,0,0));
 }
