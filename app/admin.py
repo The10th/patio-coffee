@@ -1,5 +1,5 @@
 from django.contrib import admin
-from apps.pcs.models import Page, Category, Item
+from app.models import Page, Category, Item
 
 admin.site.register(Page)
 admin.site.register(Category)

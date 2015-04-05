@@ -1,0 +1,194 @@
+@patio-cream:#DADADA;
+@patio-rust:#AC6E45;
+@patio-olive:#A19D5E;
+@patio-navy:#4C5975;
+@import url(http://fonts.googleapis.com/css?family=Nunito);
+
+.gradient (@startColor: lighten(@patio-cream,2%), @endColor: darken(@patio-cream, 25%)) {
+	background-color: @startColor;
+	background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+	background: -webkit-linear-gradient(top, @startColor, @endColor);
+	background: -moz-linear-gradient(top, @startColor, @endColor);
+	background: -ms-linear-gradient(top, @startColor, @endColor);
+	background: -o-linear-gradient(top, @startColor, @endColor);
+}
+.transparent{
+	background:transparent;
+	background-color:transparent;
+}
+.test {
+    background: white;
+}
+
+//html attribute styling
+
+body {
+	font-family: 'Nunito', 'Helvetica';
+  margin:0;
+  padding:0;
+  height:100%;
+}
+
+#container {
+  min-height:100%;
+  position:relative;
+}
+
+#bodyContainer{ padding-bottom:60px }
+
+// Tapering horizontal rule
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: -webkit-linear-gradient(left, @patio-olive, @patio-rust, @patio-olive);
+    background-image:    -moz-linear-gradient(left, @patio-olive, @patio-rust, @patio-olive);
+    background-image:     -ms-linear-gradient(left, @patio-olive, @patio-rust, @patio-olive);
+    background-image:      -o-linear-gradient(left, @patio-olive, @patio-rust, @patio-olive);
+    &:after{
+    	.transparent;
+    	color:@patio-rust;
+	content:'\00A7';
+	display: inline-block;
+	position: relative;
+	top: -0.6em;
+	left:50%;
+	font-size: 1.5em;
+	padding: 0 0.25em;
+    }
+}
+
+
+//============ Begin Header Styling ============//
+
+header{
+	height:100%;
+	min-height: 90px;
+	padding:1%;
+	margin: 0;
+	color: white;
+	background: #a8501e; /* Old browsers */
+	background: -moz-linear-gradient(top,  #a8501e 1%, #ac6e45 100%, #ac6e45 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#a8501e), color-stop(100%,#ac6e45), color-stop(100%,#ac6e45)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #a8501e 1%,#ac6e45 100%,#ac6e45 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #a8501e 1%,#ac6e45 100%,#ac6e45 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #a8501e 1%,#ac6e45 100%,#ac6e45 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #a8501e 1%,#ac6e45 100%,#ac6e45 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a8501e', endColorstr='#ac6e45',GradientType=0 ); /* IE6-9 */
+
+	.left{
+		line-height: 1em;
+		h1 {
+			font-size: 36px;
+  		line-height: 0.5em;
+  		margin: 0;
+  	}
+  	p {
+  		line-height: 1em;
+  		font-size: 1.2em;
+  		margin-bottom: 0;
+  		&:last-child {
+  			margin-top: 0.4em;
+  		}
+  	}
+	}
+	.right {
+		line-height: 0.5em;
+		font-size: 1.2em;
+		text-align: right;
+		p {
+			margin-top: 0;
+		}
+		span {
+			margin-left: 1em;
+			font-size: 1.2em;
+		}
+	}
+}
+
+//============ End Nav Styling ============//
+
+//============ Begin Carousel Effects ============//
+
+//carousel effect with indicator dots
+.slider{
+	height:100%;
+	// border-top: 3px solid @patio-olive;
+	// border-bottom: 3px solid @patio-olive;
+	ul.indicators{
+		.indicator-item{
+			z-index:1000;
+		}
+		li.indicator-item.active {
+ 			 background-color: @patio-navy;
+		}
+	}
+}
+
+//============ End Carousel Effects ============//
+
+
+//============ Begin Pagination ==============//
+.tabs{
+	.transparent;
+	li.tab{
+		.transparent;
+		a{
+			color:@patio-rust;
+			&:hover{
+				color:@patio-navy;
+			}
+		}
+	}
+	.indicator{
+		background-color:@patio-rust;
+	}
+}
+
+table tr {
+	padding: 0;
+}
+
+.page{
+	.pageDescription {
+	  font-size: 1.4em;
+	  font-weight: bold;
+	  text-align: center;
+	}
+	.categoryName {
+		text-align: center;
+		font-size: 3em;
+	}
+	.categoryDescription {
+		text-align: center;
+		font-size: 1em;
+	  font-weight: bold;
+	}
+	.item {
+		margin: 0;
+		padding: 0;
+	}
+	.itemName {
+	  font-size: 1.4em;
+	  margin-bottom: 0;
+	}
+	.itemDescription {
+		margin-top: 0;
+		font-size: 1.2em;
+	}
+	.itemPrice {
+		text-align: right;
+	}
+}
+
+footer{
+	vertical-align: bottom;
+	padding:2%;
+	border-top: 2px solid @patio-rust;
+	border-bottom: 2px solid @patio-rust;
+	margin-top:2%;
+	margin-bottom: 2%;
+}
+
+
+

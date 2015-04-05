@@ -9,53 +9,50 @@
   <title>Patio Coffee Shop</title>
 </head>
 <body>
+  <div id="container">
+    <header>
+      <div class='left'>
+        <h1>Patio Coffee Shop</h1>
+        <p>25 W. 25th Ave</p>
+        <p>San Mateo, CA 94403</p>
+      </div>
+      <div class='right'>
+        <p>Open Daily: 7am - 3pm</p>
+        <p>Phone: (650) 570-3037</p>
+        <span class='fa fa-2x fa-yelp'></span>
+        <span class='fa fa-2x fa-facebook'></span>
+        <span class='fa fa-2x fa-twitter'></span>
+      </div>
+    </header>
 
   <!--============== Begin Nav  ==============-->
-  <nav>
-    <ul class='left address'>
-      <li>Patio Coffee Shop</li>
-      <li>25 W. 25th Ave</li>
-      <li>San Mateo, CA 94403</li>
-    </ul>
-    <ul class='right'>
-      <li>Open Daily: 7am - 3pm</li>
-      <li>Phone: (650) 570-3037</li>
-      <li>
-        <ul class='center social'>
-          <li class='fa fa-2x fa-yelp'></li>
-          <li class='fa fa-2x fa-facebook'></li>
-          <li class='fa fa-2x fa-twitter'></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
   <!--============== End Nav  ==============-->
   <!--============== Begin Carousel Slider  ==============-->
   <div class="slider">
     <ul class="slides">
       <li>
-        <img src="http://lorempixel.com/580/250/nature/1"> <!-- random image -->
+        <img src="{% static "pcs/breakfast.jpg" %}" alt="Breakfast"/>
         <div class="caption center-align">
             <h3>Welcome to the Patio Coffee Shop!</h3>
             <h5 class="light grey-text text-lighten-3">Here's our shop slogan.</h5>
         </div>
       </li>
       <li>
-        <img src="http://lorempixel.com/580/250/nature/2"> <!-- random image -->
+        <img src="{% static "pcs/breakfast2.jpg" %}" alt="Breakfast"/>
         <div class="caption left-align">
           <h3>Check out this thing!</h3>
           <h5 class="light grey-text text-lighten-3">Some words about this thing.</h5>
         </div>
       </li>
       <li>
-        <img src="http://lorempixel.com/580/250/nature/3"> <!-- random image -->
+        <img src="{% static "pcs/breakfast3.jpg" %}" alt="Breakfast"/>
         <div class="caption right-align">
           <h3>Look at this!</h3>
           <h5 class="light grey-text text-lighten-3">More words, but about this thing.</h5>
         </div>
       </li>
       <li>
-        <img src="http://lorempixel.com/580/250/nature/4"> <!-- random image -->
+        <img src="{% static "pcs/breakfast4.jpg" %}" alt="Breakfast"/>
         <div class="caption center-align">
           <h3>Check this out</h3>
           <h5 class="light grey-text text-lighten-3">Some more words about things.</h5>
@@ -75,29 +72,53 @@
           {% endfor %}
         </ul>
       </div>
-      <div id="page.name" class="col s12 pages">
-        page.description
-      </div>
 
-      <div id="category.name" class="col s12 pages">
-        <h1 class='center'>Category.name</h1>
-        <hr>
-        <h5 class='center'>Category.description</h5>
+      {% for page in pages %}
 
-        <table>
-          <tr>
-            <td>
-              <h5>Item.name
-                <br>
-                <small>Item.description</small>
-              </h5>
-            </td>
-            <td class='right'>
-              <h5>$Item.price</h5>
-            </td>
-          </tr>
-        </table>
-      </div>
+        <div id="{{page.name}}" class="col s12 page">
+          <p class="pageDescription">{{page.description}}</p>
+
+            {% for category in categories %}
+
+              {% if page.id == category.page.id %}
+
+                <div id="{{category.name}}" class="col s12">
+                  <h1 class='categoryName'>{{category.name}}</h1>
+                  <hr>
+                  <h5 class='categoryDescription'>{{category.description}}</h5>
+
+                    {% for item in items %}
+                      {% if category.id == item.category.id %}
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td class="item">
+                                <h4 class="itemName">{{item.name}}</h4>
+                                <h5 class="itemDescription">{{item.description}}</h5>
+                              </td>
+                              <td>
+                                <h4 class="itemPrice">{{item.price}}</h4>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      {% endif %}
+
+                    {% endfor %}
+
+                </div>
+
+              {% endif %}
+
+
+            {% endfor %}
+          </div>
+
+      {% endfor %}
+
+
+
+
     </div>
   </div>
   <!--============== End Content  ==============-->
@@ -108,7 +129,7 @@
       </div>
   </footer>
   <!--============== End Footer  ==============-->
-
+</div>
 </body>
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">
