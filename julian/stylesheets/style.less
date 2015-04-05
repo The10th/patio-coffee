@@ -5,19 +5,12 @@
 *{
 	font-family: 'Avenir Next';
 }
-body{
-	.gradient;
-}
 
 // Tapering horizontal rule
 hr {
     border: 0;
     height: 1px;
-    background: #333;
-    background-image: -webkit-linear-gradient(left, @patio-olive, @patio-rust, @patio-olive);
-    background-image:    -moz-linear-gradient(left, @patio-olive, @patio-rust, @patio-olive);
-    background-image:     -ms-linear-gradient(left, @patio-olive, @patio-rust, @patio-olive);
-    background-image:      -o-linear-gradient(left, @patio-olive, @patio-rust, @patio-olive);
+    .taper;
     &:after{
     	.transparent;
     	color:@patio-rust;
@@ -38,8 +31,9 @@ nav{
 	height:100%;
 	padding:1%;
 	background-color: @patio-rust;
+	.gradient-rust;
 	.address{
-		li{	
+		li{
 			//makes the first line of the address a bit bigger
 			&:first-child{
 				line-height: 40px;
@@ -93,7 +87,7 @@ nav{
 
 //adding min height so footer visually stays near the bottom of the page
 .container{
-	min-height: 500px;
+	min-height: 700px;
 }
 
 
@@ -110,7 +104,7 @@ nav{
 		}
 	}
 	.indicator{
-		background-color:@patio-rust;
+		.taper;
 	}
 }
 .pages{
@@ -125,6 +119,3 @@ footer{
 	margin-top:2%;
 	margin-bottom: 2%;
 }
-
-
-

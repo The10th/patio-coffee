@@ -2,25 +2,24 @@
   background: transparent;
   background-color: transparent;
 }
+.taper {
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), #ac6e45, rgba(0, 0, 0, 0));
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), #ac6e45, rgba(0, 0, 0, 0));
+  background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0), #ac6e45, rgba(0, 0, 0, 0));
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0), #ac6e45, rgba(0, 0, 0, 0));
+}
 * {
   font-family: 'Avenir Next';
-}
-body {
-  background-color: #dfdfdf;
-  background: -webkit-gradient(linear, left top, left bottom, from(#dfdfdf), to(#9a9a9a));
-  background: -webkit-linear-gradient(top, #dfdfdf, #9a9a9a);
-  background: -moz-linear-gradient(top, #dfdfdf, #9a9a9a);
-  background: -ms-linear-gradient(top, #dfdfdf, #9a9a9a);
-  background: -o-linear-gradient(top, #dfdfdf, #9a9a9a);
 }
 hr {
   border: 0;
   height: 1px;
-  background: #333;
-  background-image: -webkit-linear-gradient(left, #a19d5e, #ac6e45, #a19d5e);
-  background-image: -moz-linear-gradient(left, #a19d5e, #ac6e45, #a19d5e);
-  background-image: -ms-linear-gradient(left, #a19d5e, #ac6e45, #a19d5e);
-  background-image: -o-linear-gradient(left, #a19d5e, #ac6e45, #a19d5e);
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), #ac6e45, rgba(0, 0, 0, 0));
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), #ac6e45, rgba(0, 0, 0, 0));
+  background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0), #ac6e45, rgba(0, 0, 0, 0));
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0), #ac6e45, rgba(0, 0, 0, 0));
 }
 hr:after {
   background: transparent;
@@ -38,6 +37,12 @@ nav {
   height: 100%;
   padding: 1%;
   background-color: #ac6e45;
+  background-color: #b37348;
+  background: -webkit-gradient(linear, left top, left bottom, from(#b37348), to(#754b2f));
+  background: -webkit-linear-gradient(top, #b37348, #754b2f);
+  background: -moz-linear-gradient(top, #b37348, #754b2f);
+  background: -ms-linear-gradient(top, #b37348, #754b2f);
+  background: -o-linear-gradient(top, #b37348, #754b2f);
 }
 nav .address li:first-child {
   line-height: 40px;
@@ -67,7 +72,7 @@ nav ul li .social li:last-child {
   background-color: #4c5975;
 }
 .container {
-  min-height: 500px;
+  min-height: 700px;
 }
 .tabs {
   background: transparent;
@@ -84,7 +89,12 @@ nav ul li .social li:last-child {
   color: #4c5975;
 }
 .tabs .indicator {
-  background-color: #ac6e45;
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), #ac6e45, rgba(0, 0, 0, 0));
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), #ac6e45, rgba(0, 0, 0, 0));
+  background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0), #ac6e45, rgba(0, 0, 0, 0));
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0), #ac6e45, rgba(0, 0, 0, 0));
 }
 .pages {
   margin-top: 3%;
