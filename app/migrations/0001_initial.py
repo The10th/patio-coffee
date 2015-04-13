@@ -13,12 +13,16 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Category',
             fields=[
-                ('id', models.AutoField(primary_key=True, verbose_name='ID', serialize=False, auto_created=True)),
+                ('id', models.AutoField(auto_created=True, serialize=False, verbose_name='ID', primary_key=True)),
                 ('name', models.CharField(unique=True, max_length=100)),
                 ('description', models.TextField(blank=True)),
                 ('weight', models.IntegerField(default=0, max_length=11)),
-                ('created_at', models.DateTimeField(verbose_name='Created', auto_now_add=True)),
-                ('updated_at', models.DateTimeField(verbose_name='Modified', auto_now_add=True)),
+                ('endMessage', models.TextField(blank=True, default='')),
+                ('showHeading', models.BooleanField(default=False)),
+                ('heading1', models.CharField(blank=True, max_length=10)),
+                ('heading2', models.CharField(blank=True, max_length=10)),
+                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Created')),
+                ('updated_at', models.DateTimeField(auto_now_add=True, verbose_name='Modified')),
             ],
             options={
             },
@@ -27,13 +31,16 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Item',
             fields=[
-                ('id', models.AutoField(primary_key=True, verbose_name='ID', serialize=False, auto_created=True)),
+                ('id', models.AutoField(auto_created=True, serialize=False, verbose_name='ID', primary_key=True)),
                 ('name', models.CharField(max_length=100)),
                 ('description', models.TextField(blank=True)),
-                ('price', models.FloatField()),
+                ('price1', models.FloatField(blank=True, default=0.0)),
+                ('price2', models.FloatField(blank=True, default=0.0)),
                 ('weight', models.IntegerField(default=0, max_length=11)),
-                ('created_at', models.DateTimeField(verbose_name='Created', auto_now_add=True)),
-                ('updated_at', models.DateTimeField(verbose_name='Modified', auto_now_add=True)),
+                ('isVegan', models.BooleanField(default=False)),
+                ('isVegtarian', models.BooleanField(default=False)),
+                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Created')),
+                ('updated_at', models.DateTimeField(auto_now_add=True, verbose_name='Modified')),
                 ('category', models.ForeignKey(to='app.Category')),
             ],
             options={
@@ -43,12 +50,13 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Page',
             fields=[
-                ('id', models.AutoField(primary_key=True, verbose_name='ID', serialize=False, auto_created=True)),
+                ('id', models.AutoField(auto_created=True, serialize=False, verbose_name='ID', primary_key=True)),
                 ('name', models.CharField(unique=True, max_length=100)),
                 ('description', models.TextField(blank=True)),
                 ('weight', models.IntegerField(default=0, max_length=11)),
-                ('created_at', models.DateTimeField(verbose_name='Created', auto_now_add=True)),
-                ('updated_at', models.DateTimeField(verbose_name='Modified', auto_now_add=True)),
+                ('endMessage', models.TextField(blank=True, default='')),
+                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Created')),
+                ('updated_at', models.DateTimeField(auto_now_add=True, verbose_name='Modified')),
             ],
             options={
             },

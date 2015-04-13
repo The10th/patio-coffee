@@ -25,8 +25,6 @@
       </div>
     </header>
 
-  <!--============== Begin Nav  ==============-->
-  <!--============== End Nav  ==============-->
   <!--============== Begin Carousel Slider  ==============-->
   <div class="slider">
     <ul class="slides">
@@ -68,7 +66,7 @@
       <div class="col s12">
         <ul class="tabs">
           {% for page in pages %}
-            <li class="tab col s3"><a href="#{{page.name}}">{{page.name}}</a></li>
+            <li class="tab col s3"><a href="#{{page.name}}" class="pageName">{{page.name}}</a></li>
           {% endfor %}
         </ul>
       </div>
@@ -77,47 +75,80 @@
 
         <div id="{{page.name}}" class="col s12 page">
           <p class="pageDescription">{{page.description}}</p>
+          {% for category in categories %}
+            {% if page.id == category.page.id %}
 
-            {% for category in categories %}
+              <div id="{{category.name}}" class="col s12">
+                <h1 class='categoryName'>{{category.name}}</h1>
+                <hr>
+                <h5 class='categoryDescription'>{{category.description}}</h5>
 
-              {% if page.id == category.page.id %}
-
-                <div id="{{category.name}}" class="col s12">
-                  <h1 class='categoryName'>{{category.name}}</h1>
-                  <hr>
-                  <h5 class='categoryDescription'>{{category.description}}</h5>
+                <table>
+                  <tbody>
+                    {% if category.showHeading == True %}
+                      <tr>
+                        {% if category.heading1 != '' or category.heading2 != '' %}
+                          <th></th>
+                        {% endif %}<!-- END HEADING1 CHECK -->
+                        {% if category.heading1 != '' %}
+                          <th class="categoryHeading">{{category.heading1}}</th>
+                        {% endif %}<!-- END HEADING1 CHECK -->
+                        {% if category.heading2 != '' %}
+                          <th class="categoryHeading">{{category.heading2}}</th>
+                        {% endif %}<!-- END HEADING1 CHECK -->
+                      </tr>
+                    {% endif %}<!-- END SHOW HEADINGS CHECK -->
 
                     {% for item in items %}
                       {% if category.id == item.category.id %}
-                        <table>
-                          <tbody>
-                            <tr>
-                              <td class="item">
-                                <h4 class="itemName">{{item.name}}</h4>
-                                <h5 class="itemDescription">{{item.description}}</h5>
-                              </td>
-                              <td>
-                                <h4 class="itemPrice">{{item.price}}</h4>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      {% endif %}
+                        <tr>
+                          {% if item.name == 'null' %}
+                            <td></td>
+                          {% else %}
+                            <td class="itemName">
+                              <p>
+                                {{item.name}}
+                                {% if item.isVegtarian == True %}
+                                  <i class="fa fa-leaf"></i>
+                                {% endif %}
+                              </p>
+                            </td>
+                          {% endif %}
+                          <td class="itemPrice">
+                            {% if item.price1 != 0.00 %}
+                              <p>{{item.price1}}</p>
+                            {% endif %}<!-- END price1 CHECK -->
+                          </td>
+                          {% if item.price2 != 0.00 %}
+                            <td class="itemPrice">
+                              <p>{{item.price2}}</p>
+                            </td>
+                          {% endif %}<!-- END price2 CHECK -->
+                        </tr>
+                        {% if item.description != '' %}
+                          <tr>
+                            <td class="itemDescription">
+                              <p colspan="2">{{item.description}}</p>
+                            </td>
+                          </tr>
+                        {% endif %}<!-- END DESCRIPTION CHECK -->
+                      {% endif %}<!-- END ITEM CHECK -->
+                    {% endfor %}<!-- END ITEM LOOP -->
+                  </tbody>
+                </table>
+                {% if category.endMessage != '' %}
+                  <p>{{category.endMessage}}</p>
+                {% endif %}<!-- END CATEGORY END MESSAGE CHECK -->
+              </div>
+            {% endif %}<!-- END CATEGORY CHECK -->
 
-                    {% endfor %}
+            {% if page.endMessage != '' %}
+              <p>{{page.endMessage}}</p>
+            {% endif %}<!-- END PAGE ENDMESSAGE CHECK -->
 
-                </div>
-
-              {% endif %}
-
-
-            {% endfor %}
-          </div>
-
-      {% endfor %}
-
-
-
+          {% endfor %}<!-- END CATEGORY LOOP -->
+        </div>
+      {% endfor %} <!-- END PAGE LOOP -->
 
     </div>
   </div>
@@ -125,7 +156,7 @@
   <!--============== Begin Footer  ==============-->
   <footer>
       <div class="center">
-          &#xa9; 2014-2015 Patio Coffee Shop - All Rights Reserved
+          <p>&#xa9; 2014-2015 Patio Coffee Shop - All Rights Reserved</p>
       </div>
   </footer>
   <!--============== End Footer  ==============-->
